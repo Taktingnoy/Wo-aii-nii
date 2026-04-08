@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>សម្រាប់ Nary - សុំត្រូវគ្នាវិញ</title>
+    <style>
+        body { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; 
+            margin: 0;
+            font-family: 'Khmer OS Battambang', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%); 
+        }
+        .container { 
+            text-align: center; 
+            background: white; 
+            padding: 40px; 
+            border-radius: 30px; 
+            box-shadow: 0 20px 50px rgba(214, 51, 132, 0.2);
+            max-width: 400px;
+            width: 85%;
+        }
+        h1 { color: #d63384; font-size: 24px; margin-bottom: 25px; line-height: 1.5; }
+        .gif-container { width: 100%; margin-bottom: 20px; }
+        img { width: 180px; border-radius: 15px; }
+        
+        .buttons { 
+            display: flex; 
+            justify-content: space-around; 
+            align-items: center;
+            margin-top: 20px;
+            position: relative;
+            min-height: 60px;
+        }
+        
+        button { 
+            padding: 12px 25px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            border-radius: 50px; 
+            border: none; 
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-weight: bold;
+        }
+        #yesBtn { 
+            background-color: #ff4d6d; 
+            color: white; 
+            box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+        }
+        #yesBtn:hover { transform: scale(1.1); }
+        
+        #noBtn { 
+            background-color: #6c757d; 
+            color: white; 
+            position: relative;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="gif-container">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHJmNHRjc3R5Zmt4Z3R4Z3R4Z3R4Z3R4Z3R4Z3R4Z3R4Z/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Cute Cat">
+        </div>
+        
+        <h1>Nary ត្រូវគ្នាវិញបានអត់? 🥺💖</h1>
+        
+        <div class="buttons">
+            <button id="yesBtn" onclick="accept()">យល់ព្រម 😼</button>
+            <button id="noBtn" onmouseover="moveButton()" onclick="moveButton()">ទេ! មិនព្រម 🖕🏻</button>
+        </div>
+    </div>
+
+    <script>
+        function moveButton() {
+            const btn = document.getElementById('noBtn');
+            // កំណត់ឱ្យរត់ក្នុងរង្វង់អេក្រង់ដែលមើលឃើញ
+            const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            
+            btn.style.position = 'fixed';
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
+        }
+
+        function accept() {
+            alert("អរគុណណាដែលយល់ព្រម! ស្រឡាញ់ Nary ជាងគេ 🥰💖");
+            window.location.href = "https://youtu.be/TsCXMRVAnVE?si=wdiCZJVMiXETivim"; 
+        }
+    </script>
+</body>
+</html>
